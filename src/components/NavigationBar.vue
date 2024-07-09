@@ -1,0 +1,120 @@
+<template>
+  <div class="bg-bgColorDark overflow-hidden">
+    <div class="m-auto flex justify-between items-center md:w-[1200px] md:h-[54px] md:mt-[24px] w-[350px] h-[24px] mt-4">
+      <div class="flex items-center">
+        <img class="w-[24px] h-[24px] md:w-[40px] md:h-[40px]" fit="cover" src="../assets/images/logo-img.png" />
+        <span class="text-[16px] ml-[6px] md:ml-2 md:text-xl font-medium text-primary">Insurance</span>
+      </div>
+      <div class="text-white text-[16px] font-medium hidden md:block">
+        <ul class="flex justify-evenly">
+          <template v-for="(item, index) in navList" :key="index">
+            <li class="mr-[48px] nav-item" :data="index" @click="currentKey = index"
+              :class="currentKey === index ? 'nav-item-active nav-item-active-text ' : ''">
+              <router-link :to="item.path">{{ item.name }}</router-link>
+            </li>
+          </template>
+        </ul>
+      </div>
+      <div>
+        <button
+          class="w-[103px] h-[46px] bg-bgColorDark rounded-[20px] border border-primary text-sm text-primary font-medium hidden md:block">
+          Login
+        </button>
+        <div class="block md:hidden" @click="handleShowMenu">
+          <a-space size="large">
+            <icon-menu :style="{ fontSize: '16px', color: '#fff' }" />
+          </a-space>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 移动设备下左侧菜单 -->
+  <a-drawer :width="340" :height="340" :visible="visible" :hideCancel="true" :header="true" :footer="false"
+    :placement="'left'" class="relative" @ok="handleOk" @cancel="handleCancel" unmountOnClose>
+    <template #title>
+      <span class="text-[16px] ml-[6px]  font-medium text-primary">Insurance</span>
+    </template>
+    <div>
+      <ul class="flex justify-evenly flex-col">
+        <template v-for="(item, index) in navList" :key="index">
+          <li class="mt-[48px] nav-item ml-1 h-[24px] leading-[24px]" :data="index" @click="handleMenuClick(item)"
+            :class="currentKey === index ? 'nav-item-active-h5 nav-item-active-text ' : ''">
+            {{ item.name }}
+          </li>
+        </template>
+      </ul>
+    </div>
+    <div class=" absolute left-4 bottom-6">
+      <button class="w-[82px] h-[36px] rounded-[15px] border border-primary text-sm text-primary font-medium">
+        Login
+      </button>
+    </div>
+  </a-drawer>
+</template>
+<script setup lang="ts">
+import { IconMenu } from '@arco-design/web-vue/es/icon';
+import { ref } from 'vue';
+import { useRouter } from 'vue-router'
+const route = useRouter()
+const currentKey = ref(0)
+const navList = [
+  {
+    id: 0,
+    name: 'Home',
+    path: '/layout/home'
+  },
+  {
+    id: 1,
+    name: 'Services',
+    path: '/layout/services'
+  }, {
+    id: 2,
+    name: 'About',
+    path: '/layout/about'
+  }, {
+    id: 3,
+    name: 'FAQ',
+    path: '/layout/faq'
+  }, {
+    id: 4,
+    name: 'Contact',
+    path: '/layout/contact'
+  }
+]
+const visible = ref(false)
+const handleShowMenu = () => {
+  console.log('click')
+  visible.value = true
+}
+const handleOk = () => {
+  visible.value = false
+}
+const handleCancel = () => {
+  visible.value = false
+}
+const handleMenuClick = (e: any) => {
+  currentKey.value = e.id
+  visible.value = false
+  route.push(e.path)
+}
+</script>
+
+<style scoped>
+.nav-item {
+  @apply relative;
+}
+
+.nav-item-active::before {
+  content: '';
+  @apply absolute -bottom-[6px] h-[2px] w-full bg-primary opacity-100 transition-all;
+}
+
+.nav-item-active-h5::before {
+  content: '';
+  @apply absolute -left-1 w-[2px] h-[24px] bg-primary opacity-100 transition-all;
+}
+
+.nav-item-active-text {
+  @apply text-primary;
+}
+</style>
