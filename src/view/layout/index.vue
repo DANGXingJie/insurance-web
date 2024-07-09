@@ -1,11 +1,12 @@
 <template>
-  <NavigationBar />
-  <div class="h-[800px]">
-    <router-view></router-view>
+  <div class="min-h-screen flex flex-col">
+    <NavigationBar />
+    <div class="min-h-screen flex-1">
+      <router-view></router-view>
+    </div>
+    <BottomNavigation />
   </div>
-  <BottomNavigation />
 </template>
-
 <script setup lang="ts">
 import BottomNavigation from '@/components/BottomNavigation.vue';
 </script>

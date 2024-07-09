@@ -9,7 +9,7 @@ export default {
     extend: {
       colors: {
         primary: '#42b983', // 主题色 蓝色
-        secondary: '#61666A', // 次要色 深灰色
+        secondary: '#6adab3ff', // 次要色 深灰色
         prohibit: '#889096', // 禁用色 浅灰色
         dark: '#171717ff', // 字体色 深黑色
         textdark: '#0C1220', // 字体色 深黑色
@@ -27,7 +27,7 @@ export default {
         '3xs': ['8px', '13px'],
       },
       boxShadow: {
-        default: '0px 3px 16px 0px rgba(109,141,214,0.10)',
+        default: '40px 40px 120px 0px rgba(46, 47, 58, 0.04)',
       },
     },
   },
