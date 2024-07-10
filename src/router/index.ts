@@ -49,6 +49,14 @@ const routes: any = [
 const router = createRouter({
   history: createMemoryHistory(),
   routes,
+  scrollBehavior(to) {
+    if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: 'smooth',
+      }
+    }
+  },
 })
 
 export default router

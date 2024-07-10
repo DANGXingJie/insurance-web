@@ -1,10 +1,14 @@
 <template>
-  <div class="min-h-screen flex flex-col">
-    <NavigationBar />
+  <div class="flex flex-col h-full">
+    <div class="flex flex-col">
+      <NavigationBar />
+    </div>
     <div class="min-h-screen flex-1">
       <router-view></router-view>
     </div>
-    <BottomNavigation />
+    <div class="h-[336px]">
+      <BottomNavigation />
+    </div>
   </div>
 </template>
 <script setup lang="ts">
