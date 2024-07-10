@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full mb-2">
+  <div class="w-full mb-2 bg-lightgray">
     <div class="flex-col w-[350px] m-auto md:flex-row md:w-[1200px] md:m-auto md:h-full md:flex md:justify-around">
       <!-- 左边 -->
       <div class="w-[356px] h-[108px]">
