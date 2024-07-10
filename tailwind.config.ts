@@ -14,7 +14,7 @@ export default {
         dark: '#171717ff', // 字体色 深黑色
         textdark: '#0C1220', // 字体色 深黑色
         danger: '#FF4D4D', // 危险色 红色
-        lightgray: '#E4E4E4',
+        lightgray: '#f8f8f8ff',
         effect: 'rgba(109, 141, 214, 0.10)', // 外部阴影颜色
         bgColorDark: '#151d38ff',
         secondaryDark: '#525252ff', // 次要色 深灰色
