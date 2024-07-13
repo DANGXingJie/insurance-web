@@ -11,7 +11,6 @@
           We work with you to customize a policy that fits your budget and your needs.
         </div>
       </div>
-
       <!-- 右边 -->
       <div class="flex flex-col mt-8 md:w-[764px] md:h-[216px] md:ml-20 md:flex md:flex-row md:mt-0">
         <!-- 中间 -->

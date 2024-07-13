@@ -12,7 +12,8 @@
   <div
     class="grid grid-rows-4 gap-y-6 w-[350px] h-full md:mt-[56px] md:h-[268px] md:w-[1200px] md:grid md:grid-cols-4 md:gap-6">
     <template v-for="(item, index) in containerList" :key="index">
-      <div :data="index" class="w-[350px] min-h-[216px] md:w-[282px] md:h-[268px] bg-white rounded-[24px] shadow-default">
+      <div :data="index"
+        class="w-[350px] min-h-[216px] md:w-[282px] md:h-[268px] arco-theme-color-bg-3 rounded-[24px] shadow-default">
         <img class="w-[56px] h-[56px] mt-3 md:w-[72px] md:h-[72px] md:mt-6 ml-6" fit="cover" :src="item.icon" />
         <div class="mt-3 md:mt-6 md:mt-8 ml-6 text-[24px] font-medium text-dark">
           {{ item.title }}

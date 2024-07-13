@@ -16,10 +16,23 @@
         </ul>
       </div>
       <div>
-        <button
-          class="w-[103px] h-[46px] bg-bgColorDark rounded-[20px] border border-primary text-sm text-primary font-medium hidden md:block">
-          Login
-        </button>
+        <div class="flex flex-col items-center md:items-center md:flex-row">
+          <button
+            class="w-[103px] h-[46px] bg-bgColorDark rounded-[20px] border border-primary text-sm text-primary font-medium hidden md:block">
+            Login
+          </button>
+          <div class="absolute top-10 right-2 md:top-0 md:right-0  md:ml-4 md:relative">
+            <a-switch size="large" :default-checked="false" :model-value="switchTheme" @change="handleSwitchTheme"
+              :checked-value="true" :unchecked-value="false" checked-color="#000033">
+              <template #checked-icon>
+                <icon-moon />
+              </template>
+              <template #unchecked-icon>
+                <icon-sun />
+              </template>
+            </a-switch>
+          </div>
+        </div>
         <div class="block md:hidden" @click="handleShowMenu">
           <a-space size="large">
             <icon-menu :style="{ fontSize: '16px', color: '#fff' }" />
@@ -57,6 +70,21 @@ import { ref } from 'vue';
 import { useRouter } from 'vue-router'
 const route = useRouter()
 const currentKey = ref(0)
+const switchTheme = ref(false)
+//暗色模式切换
+const handleSwitchTheme = (ev: Event) => {
+  switchTheme.value = !switchTheme.value
+  if (switchTheme.value) {
+    // 设置为暗黑主题
+    document.body.setAttribute('arco-theme', 'dark')
+    console.log(ev)
+
+  }
+  else {
+    // 设置为明亮主题
+    document.body.setAttribute('arco-theme', 'light')
+  }
+}
 const navList = [
   {
     id: 0,

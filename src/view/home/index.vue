@@ -15,14 +15,14 @@
     </div>
     <div class="block md:hidden bg-white h-[40px]"></div>
     <!-- 灰色背景 -->
-    <div class="bg-lightgray md:pt-0 w-full min-h-[800px] flex flex-col">
+    <div class="arco-theme-color-bg-1  md:pt-0 w-full min-h-[800px] flex flex-col">
       <div class="w-[390px] mt-10 md:w-[1200px] m-auto md:mt-10">
         <Customers />
         <!-- faqs -->
         <Faqs />
       </div>
       <!-- footer背景 -->
-      <div class="w-[350px] md:w-[1408px] md:h-[500px] m-auto md:mt-20 mt-12">
+      <div class="w-[350px] md:w-[1408px] md:h-[500px] m-auto md:mt-20 mt-12" @click="handleStart">
         <img class=" hidden md:block w-[1408px] h-full pb-20" fit="cover" src="@/assets/images/footer.png" />
         <img class="block md:hidden w-[350px] h-full pb-10" fit="cover" src="@/assets/images/footer-h5.png" />
       </div>
@@ -41,6 +41,10 @@ const layoutInfo = {
   desc: 'If you have a covered loss, you will need to file a claim with your insurance company. The process for filing a claim will vary depending on the type of insurance you have.However, typically you will need to provide the insurance company with information about the loss, such as the date of the loss, the amount of your losses, and any supporting documentation.',
   bgImg: SidedLayoutimg,
   type: 2,
+}
+
+const handleStart = () => {
+  console.log('start')
 }
 </script>
 

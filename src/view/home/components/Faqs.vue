@@ -17,7 +17,7 @@
       </div>
     </template>
     <div class="mt-[32px] w-[390px] md:mt-[56px] md:w-[1200px] m-auto flex justify-center">
-      <button
+      <button @click="handleMore"
         class="w-[158px] md:w-[154px] h-[46px] rounded-[20px] border border-secondary text-secondary text-sm font-medium">
         Discover More
       </button>
@@ -63,6 +63,9 @@ const faqList = reactive([
 ])
 const handleIsOpen = (index: number) => {
   faqList[index].open = !faqList[index].open
+}
+const handleMore = () => {
+  console.log('more')
 }
 </script>
 <style scoped></style>
