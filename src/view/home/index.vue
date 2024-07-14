@@ -15,7 +15,7 @@
     </div>
     <div class="block md:hidden bg-white h-[40px]"></div>
     <!-- 灰色背景 -->
-    <div class="arco-theme-color-bg-1  md:pt-0 w-full min-h-[800px] flex flex-col">
+    <div class="bg-lightgray  md:pt-0 w-full min-h-[800px] flex flex-col">
       <div class="w-[390px] mt-10 md:w-[1200px] m-auto md:mt-10">
         <Customers />
         <!-- faqs -->

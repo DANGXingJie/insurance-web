@@ -1,4 +1,4 @@
-# Vue 3 + TypeScript + Vite+TailwindCSS 响应式网站
+# Vue3 + TypeScript +ArcoDesignVue+ Vite+TailwindCSS 响应式网站
 
 #### PC端效果
 
