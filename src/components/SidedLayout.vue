@@ -2,11 +2,12 @@
   <div class="mt-[57px] md:mt-20 flex md:flex-row flex-col">
     <div class="w-[350px] h-full md:w-[593px] md:h-[358px]"
       :class="props.type === 1 ? 'md:order-1' : 'md:order-2 order-2'">
-      <span :class="props.type === 1 ? 'text-white' : 'text-dark'"
+      <span
+        :class="props.type === 1 && props.title === 'Let us help you protect your assets' ? 'text-white' : 'text-dark'"
         class="text-[32px] leading-[40px] md:text-[63px] font-medium whitespace-normal break-words md:leading-[70px]">
         {{ props.title }}
       </span>
-      <div :class="props.type === 1 ? 'text-white' : 'text-dark'"
+      <div :class="props.type === 1 && props.title === 'Let us help you protect your assets' ? 'text-white' : 'text-dark'"
         class="text-[16px] w-[350px] mt-2 md:mt-6 md:text-[18px] font-normal  md:w-[480px] text-left">
         {{ props.desc }}
       </div>

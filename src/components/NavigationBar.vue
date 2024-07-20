@@ -1,11 +1,11 @@
 <template>
-  <div class="bg-bgColorDark overflow-hidden">
+  <div :class="currentKey == 0 ? 'text-primary bg-bgColorDark' : 'text-dark'" class="overflow-hidden">
     <div class="m-auto flex justify-between items-center md:w-[1200px] md:h-[54px] md:mt-[24px] w-[350px] h-[24px] mt-4">
       <div class="flex items-center">
         <img class="w-[24px] h-[24px] md:w-[40px] md:h-[40px]" fit="cover" src="../assets/images/logo-img.png" />
         <span class="text-[16px] ml-[6px] md:ml-2 md:text-xl font-medium text-primary">Insurance</span>
       </div>
-      <div class="text-white text-[16px] font-medium hidden md:block">
+      <div :class="currentKey == 0 ? 'text-white' : 'text-dark'" class="text-[16px] font-medium hidden md:block">
         <ul class="flex justify-evenly">
           <template v-for="(item, index) in navList" :key="index">
             <li class="mr-[48px] nav-item" :data="index" @click="currentKey = index"
@@ -17,8 +17,8 @@
       </div>
       <div>
         <div class="flex flex-col items-center md:items-center md:flex-row">
-          <button @click="handleLogin"
-            class="w-[103px] h-[46px] bg-bgColorDark rounded-[20px] border border-primary text-sm text-primary font-medium hidden md:block">
+          <button @click="handleLogin" :class="currentKey == 0 ? 'bg-bgColorDark' : 'bg-white'"
+            class="w-[103px] h-[46px]  rounded-[20px] border border-primary text-sm text-primary font-medium hidden md:block">
             Login
           </button>
           <div class="absolute top-10 right-2 md:top-0 md:right-0  md:ml-4 md:relative">
@@ -33,9 +33,10 @@
             </a-switch>
           </div>
         </div>
+        <!-- 汉堡菜单 -->
         <div class="block md:hidden" @click="handleShowMenu">
           <a-space size="large">
-            <icon-menu :style="{ fontSize: '16px', color: '#fff' }" />
+            <icon-menu :style="{ fontSize: '16px', color: currentKey == 0 ? '#fff' : '#000' }" />
           </a-space>
         </div>
       </div>
@@ -67,7 +68,7 @@
 </template>
 <script setup lang="ts">
 import { IconMenu } from '@arco-design/web-vue/es/icon';
-import { ref } from 'vue';
+import { reactive, ref } from 'vue';
 import { useRouter } from 'vue-router'
 const route = useRouter()
 const currentKey = ref(0)
@@ -86,7 +87,7 @@ const handleSwitchTheme = (ev: Event) => {
     document.body.setAttribute('arco-theme', 'light')
   }
 }
-const navList = [
+const navList = reactive([
   {
     id: 0,
     name: 'Home',
@@ -110,6 +111,7 @@ const navList = [
     path: '/layout/contact'
   }
 ]
+)
 const visible = ref(false)
 const handleShowMenu = () => {
   console.log('click')
