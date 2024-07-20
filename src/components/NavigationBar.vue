@@ -17,7 +17,7 @@
       </div>
       <div>
         <div class="flex flex-col items-center md:items-center md:flex-row">
-          <button
+          <button @click="handleLogin"
             class="w-[103px] h-[46px] bg-bgColorDark rounded-[20px] border border-primary text-sm text-primary font-medium hidden md:block">
             Login
           </button>
@@ -58,7 +58,8 @@
       </ul>
     </div>
     <div class=" absolute left-4 bottom-6">
-      <button class="w-[82px] h-[36px] rounded-[15px] border border-primary text-sm text-primary font-medium">
+      <button @click="handleLogin"
+        class="w-[82px] h-[36px] rounded-[15px] border border-primary text-sm text-primary font-medium">
         Login
       </button>
     </div>
@@ -124,6 +125,10 @@ const handleMenuClick = (e: any) => {
   currentKey.value = e.id
   visible.value = false
   route.push(e.path)
+}
+
+const handleLogin = () => {
+  route.push('/login')
 }
 </script>
 
