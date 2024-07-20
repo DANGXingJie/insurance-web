@@ -13,7 +13,7 @@
       </div>
       <button @click="handleGetStarted"
         class="mt-[32px] w-[142px] h-[46px] text-[14px] rounded-[20px] bg-secondary md:w-[153px] md:h-[56px] md:bg-primary flex items-center justify-center md:mt-[56px] md:rounded-[24px] md:text-[16px]">
-        Get Started
+        {{ props.btnText }}
       </button>
     </div>
     <div :class="props.type === 1 ? 'order-1' : 'md:order-1 order-1 md:top-0 mt-8'"
@@ -42,6 +42,10 @@ const props = defineProps({
   bgImg: {
     type: String,
     default: homeBg
+  },
+  btnText: {
+    type: String,
+    default: 'Get Started'
   }
 })
 const emit = defineEmits(['getStarted'])
