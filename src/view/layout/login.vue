@@ -96,7 +96,7 @@ const rules = {
     },
     {
       //验证规则
-      validator: (value, cb) => {
+      validator: (value: string, cb: any) => {
         //邮箱格式
         if (value.match(/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/)) {
           cb()
@@ -113,7 +113,7 @@ const rules = {
     },
     {
       //验证规则
-      validator: (value, cb) => {
+      validator: (value: string, cb: any) => {
         //密码长度5-8位
         if (value.length >= 5 || value.length <= 8) {
           cb()
@@ -125,7 +125,7 @@ const rules = {
   ],
 }
 
-const handleSubmit = ({ values, errors }) => {
+const handleSubmit = ({ values, errors }: any) => {
   //如果没有同意协议，则弹出对话
   if (!form.isRead) {
     Message.warning('请先同意协议')
