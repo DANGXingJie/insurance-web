@@ -1,6 +1,7 @@
 <template>
-  <div class="w-full mb-2 bg-lightgray">
-    <div class="flex-col w-[350px] m-auto md:flex-row md:w-[1200px] md:m-auto md:h-full md:flex md:justify-around">
+  <div class="w-full mb-2 bg-lightgray overflow-hidden">
+    <div
+      class="flex-col mt-12 md:mt-20 w-[350px] m-auto md:flex-row md:w-[1200px] md:m-auto md:h-full md:flex md:justify-around">
       <!-- 左边 -->
       <div class="w-[356px] h-[108px]">
         <div class="flex items-center">

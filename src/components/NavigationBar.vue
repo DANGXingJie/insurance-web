@@ -21,7 +21,7 @@
             class="w-[103px] h-[46px]  rounded-[20px] border border-primary text-sm text-primary font-medium hidden md:block">
             Login
           </button>
-          <div class="absolute top-10 right-2 md:top-0 md:right-0  md:ml-4 md:relative">
+          <div v-if="false" class="absolute top-10 right-2 md:top-0 md:right-0  md:ml-4 md:relative">
             <a-switch size="large" :default-checked="false" :model-value="switchTheme" @change="handleSwitchTheme"
               :checked-value="true" :unchecked-value="false" checked-color="#000033">
               <template #checked-icon>
