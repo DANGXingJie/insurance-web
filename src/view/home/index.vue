@@ -36,15 +36,23 @@ import LatestArtcile from './components/LatestArtcile.vue'
 import Customers from './components/Customers.vue'
 import Faqs from './components/Faqs.vue'
 import SidedLayoutimg from '@/assets/images/layout-img.png'
+import axios from 'axios'
 const layoutInfo = {
   title: 'How do I file a claim?',
   desc: 'If you have a covered loss, you will need to file a claim with your insurance company. The process for filing a claim will vary depending on the type of insurance you have.However, typically you will need to provide the insurance company with information about the loss, such as the date of the loss, the amount of your losses, and any supporting documentation.',
   bgImg: SidedLayoutimg,
   type: 2,
 }
-
 const handleStart = () => {
   console.log('start')
+
+  // 发起一个post请求
+  axios({
+    method: 'get',
+    url: 'http://localhost:7000/user/userInfo/1',
+  }).then(res => {
+    console.log(res.data)
+  });
 }
 </script>
 

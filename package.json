@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^1.7.2",
     "postcss-pxtorem": "^6.1.0",
     "vue": "^3.4.29",
     "vue-router": "4"
