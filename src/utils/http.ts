@@ -1,6 +1,7 @@
 import axios from 'axios'
 import type { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from 'axios'
 import { Message } from '@arco-design/web-vue'
+import serviceUrls from '@/config/baseUrlConfig'
 // 数据返回的接口
 // 定义请求响应参数，不含data
 interface Result {
@@ -11,7 +12,7 @@ interface Result {
 interface ResultData<T = any> extends Result {
   data?: T
 }
-const URL: string = ''
+const URL: string = serviceUrls.yiyanService
 enum RequestEnums {
   TIMEOUT = 20000,
   OVERDUE = 600, // 登录失效

@@ -1,5 +1,5 @@
 <template>
-  <div :class="currentKey == 0 ? 'text-primary bg-bgColorDark' : 'text-dark'" class="overflow-hidden">
+  <div :class="currentKey === 0 ? 'text-primary bg-bgColorDark' : 'text-dark'" class="overflow-hidden">
     <div class="m-auto flex justify-between items-center md:w-[1200px] md:h-[54px] md:mt-[24px] w-[350px] h-[24px] mt-4">
       <div class="flex items-center">
         <img class="w-[24px] h-[24px] md:w-[40px] md:h-[40px]" fit="cover" src="../assets/images/logo-img.png" />

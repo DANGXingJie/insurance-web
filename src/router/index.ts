@@ -1,10 +1,12 @@
-import { createMemoryHistory, createRouter } from 'vue-router'
+import { createMemoryHistory, createRouter, RouteRecordRaw } from 'vue-router'
+const Parent = () => import('@/view/layout/parent.vue')
 
-const routes: any = [
+const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'layout',
     component: () => import('@/view/layout/index.vue'),
+    children: [],
     redirect: () => {
       return { path: '/layout/home' }
     },
@@ -16,6 +18,7 @@ const routes: any = [
       {
         path: 'home',
         component: () => import('@/view/home/index.vue'),
+        meta: { title: 'home' },
       },
       {
         path: 'services',
@@ -42,7 +45,39 @@ const routes: any = [
   {
     path: '/login',
     component: () => import('@/view/layout/login.vue'),
-    meta: { title: 'login' },
+    meta: { title: 'login', auth: false },
+  },
+  //页面中的二级页面
+  {
+    path: '/user',
+    name: 'userPage',
+    component: Parent,
+    children: [
+      {
+        path: 'detail',
+        name: 'detail',
+        component: () => import('@/view/user/detail.vue'),
+        meta: {
+          title: '用户二级页面',
+          pass: true,
+        },
+      },
+    ],
+  },
+
+  {
+    path: '/404',
+    name: 'NotFound',
+    component: () => import('@/view/layout/404.vue'),
+    meta: {
+      title: '404',
+      auth: false,
+    },
+  },
+  {
+    //不存在的路由
+    path: '/:pathMatch(.*)',
+    redirect: '/404',
   },
 ]
 

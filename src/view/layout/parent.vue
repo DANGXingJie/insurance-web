@@ -1,9 +1,5 @@
 <template>
   <router-view></router-view>
 </template>
-
-<script setup lang="ts">
-
+<script setup name="ParentLayout">
 </script>
-
-<style scoped></style>

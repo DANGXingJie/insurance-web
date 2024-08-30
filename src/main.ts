@@ -2,4 +2,7 @@ import { createApp } from 'vue'
 import './style.css'
 import router from './router/routerBeforeEach'
 import App from './App.vue'
-createApp(App).use(router).mount('#app')
+import { setupStore } from './stores'
+const app = createApp(App)
+setupStore(app)
+app.use(router).mount('#app')
