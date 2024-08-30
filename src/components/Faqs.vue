@@ -1,6 +1,6 @@
 <template>
   <div class="mt-10 w-[390px] md:mt-20 md:w-[1200px] md:min-h-[800px]">
-    <span class="text-base ml-5 md:text-5xl font-medium text-dark mt-20 inline-block">FAQs</span>
+    <span v-if="props.type === 1" class="text-base ml-5 md:text-5xl font-medium text-dark mt-20 inline-block">FAQs</span>
     <template v-for="(item, index) in faqList" :key="index">
       <div
         class="mt-8 w-[350px] min-h-[76px] m-auto rounded-[12px] md:mt-4 md:w-[1200px] md:min-h-[96px] bg-white md:rounded-[20px]">
@@ -16,7 +16,7 @@
         </div>
       </div>
     </template>
-    <div class="mt-[32px] w-[390px] md:mt-[56px] md:w-[1200px] m-auto flex justify-center">
+    <div v-if="props.type === 1" class="mt-[32px] w-[390px] md:mt-[56px] md:w-[1200px] m-auto flex justify-center">
       <button @click="handleMore"
         class="w-[158px] md:w-[154px] h-[46px] rounded-[20px] border border-secondary text-secondary text-sm font-medium">
         Discover More
@@ -28,6 +28,12 @@
 <script setup lang="ts">
 import { reactive } from 'vue'
 import { IconPlus, IconMinus } from '@arco-design/web-vue/es/icon'
+const props = defineProps({
+  type: {
+    type: Number,
+    default: 1//1首页2单独FAQs
+  }
+})
 
 const faqList = reactive([
   {
