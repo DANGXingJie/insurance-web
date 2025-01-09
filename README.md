@@ -2,17 +2,8 @@
 
 #### PC端效果
 
-![1723261062437.png](https://imgos.cn/2024/08/10/66b6e01eedeb1.png)
-![1723261080875.png](https://imgos.cn/2024/08/10/66b6e01f0d545.png)
-
-
-
-
-
-
+![](https://github.com/DANGXingJie/noteRepo/blob/master/PC_20250110002243.png?raw=true)
 
 #### 移动端效果
 
-![1723261159677.png](https://imgos.cn/2024/08/10/66b6e01d8bda7.png)
-
-![1723261216626.png](https://imgos.cn/2024/08/10/66b6e01da6290.png)
+![](https://github.com/DANGXingJie/noteRepo/blob/master/h5_20250110002359.png?raw=true)
