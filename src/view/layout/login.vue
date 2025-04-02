@@ -77,7 +77,7 @@ const route = useRouter()
 const isVisibiity = ref(true)
 const form = reactive({
   name: 'admin',
-  email: '45412445@qq.com',
+  email: '5254xxxx@qq.com',
   password: '1234567877',
   isRead: false,
 })
