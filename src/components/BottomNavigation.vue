@@ -52,30 +52,7 @@
     <div
       class="flex flex-col items-center justify-center md:w-[1200px] md:h-[72px] md:m-auto md:mt-[48px] md:bg-bgColorGrey md:rounded-[48px] md:flex md:items-center md:justify-between md:flex-row">
       <div class="text-[12px] ml-5 md:text-[16px] font-normal text-grey">© 2022 Company Name® Global Inc.</div>
-      <div class="mt-6 md:mt-0 flex w-[260px] justify-evenly cursor-pointer">
-        <div
-          class="w-[40px] h-[40px] rounded-[20px] border border-bgColorLight flex items-center justify-center opacity-100">
-          <icon-facebook :style="{ fontSize: '16px', color: 'text-dark' }" />
-        </div>
-        <div
-          class="w-[40px] h-[40px] rounded-[20px] border border-bgColorLight flex items-center justify-center opacity-100">
-          <icon-twitter :style="{ fontSize: '16px', color: 'text-dark' }" />
-
-        </div>
-        <div
-          class="w-[40px] h-[40px] rounded-[20px] border border-bgColorLight flex items-center justify-center opacity-100">
-          <icon-github :style="{ fontSize: '16px', color: 'text-dark' }" />
-
-        </div>
-        <div
-          class="w-[40px] h-[40px] rounded-[20px] border border-bgColorLight flex items-center justify-center opacity-100">
-          <icon-google :style="{ fontSize: '16px', color: 'text-dark' }" />
-        </div>
-        <div
-          class="w-[40px] h-[40px] rounded-[20px] border border-bgColorLight flex items-center justify-center opacity-100">
-          <icon-qq-zone :style="{ fontSize: '16px', color: 'text-dark' }" />
-        </div>
-      </div>
+      <IconGroup />
       <div class="mt-6 md:mt-0 h-[24px] flex mr-[22px] ">
         <span class="text-secondaryDark text-[16px] font-medium mr-11">Terms of Service</span>
         <span class="text-secondaryDark text-[16px] font-medium">Privacy Policy</span>
@@ -84,7 +61,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { IconFacebook, IconTwitter, IconGithub, IconGoogle, IconQqZone } from '@arco-design/web-vue/es/icon'
+import IconGroup from '@/components/IconGroup.vue'
 const navList = [
   {
     title: 'Navigate',
