@@ -40,6 +40,11 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/view/contact/index.vue'),
         meta: { title: 'contact' },
       },
+      {
+        path: 'latestArticle',
+        component: () => import('@/view/latestArticle/index.vue'),
+        meta: { title: 'latestArticle' },
+      },
     ],
   },
   {

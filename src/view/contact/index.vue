@@ -104,13 +104,13 @@ const rules = {
   ],
 }
 
-const handleSubmit = ({ values, errors }: any) => {
+const handleSubmit = () => {
 
   //提交表单
-  console.log('values:', values, '\nerrors:', errors)
-  Message.success('提交成功')
+  // console.log('values:', values, '\nerrors:', errors)
+  // Message.success('提交成功')
   //跳转登录
-  route.push('/')
+  route.push('/layout/latestArticle')
 }
 
 </script>
@@ -122,11 +122,11 @@ const handleSubmit = ({ values, errors }: any) => {
 
 :deep(.arco-textarea) {
   height: 98px !important;
-  border-radius: 20px !important;
+  border-radius: 24px !important;
 }
 
 :deep(.arco-form-item-content-wrapper) {
-  border-radius: 20px !important;
+  border-radius: 24px !important;
 }
 
 :deep(.arco-btn) {
