@@ -1,9 +1,9 @@
 <template>
   <div class="flex flex-col h-full">
-    <div class="flex flex-col">
+    <div class="flex flex-col md:fixed md:top-0 md:w-full md:z-50">
       <NavigationBar />
     </div>
-    <div class="min-h-screen flex-1">
+    <div class="min-h-screen flex-1 md:mt-12">
       <router-view></router-view>
     </div>
     <div class="h-[336px]">

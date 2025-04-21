@@ -149,7 +149,7 @@ const navBgColor = computed(() => {
     case 4:
       return 'text-dark bg-syGreyBg'
     default:
-      return 'text-dark'
+      return 'text-dark bg-bgColorGrey'
   }
 })
 </script>
