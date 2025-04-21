@@ -1,9 +1,9 @@
 <template>
-  <div class="bg-lightgray ">
+  <div class="bg-syGreyBg overflow-hidden">
     <div class="md:w-[1200px] m-auto md:mt-[66px] w-[390px] mt-2">
       <div class="w-[350px] m-auto md:w-[1200px]">
         <div
-          class="md:w-[86px] md:h-[50px] w-[75px] h-[38px] rounded-3xl border border-gray-200 flex justify-center items-center">
+          class="md:w-[86px] mt-8 md:h-[50px] w-[75px] h-[38px] rounded-3xl border border-gray-200 flex justify-center items-center">
           <span class="text-secondary md:text-[18px] text-[14px] font-normal">FAQs</span>
         </div>
         <div

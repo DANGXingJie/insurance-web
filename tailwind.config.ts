@@ -21,6 +21,7 @@ export default {
         grey: '#a3a3a3ff', // 次要色 深灰色
         bgColorGrey: '#f5f5f5ff', // 背景色灰色
         bgColorLight: '#e5e5e5ff',
+        syGreyBg: '#F8F8F8',
       },
       fontSize: {
         '2xs': ['10px', '15px'],

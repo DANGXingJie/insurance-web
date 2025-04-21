@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-[#F8F8F8] min-h-screen w-full overflow-hidden">
+  <div class="bg-syGreyBg min-h-screen w-full overflow-hidden">
     <div
       class="md:flex md:w-[1200px] w-[350px] h-[845px] m-auto md:mt-[90px] md:h-[558px] mt-[24px] bg-white shadow-light-500 rounded-[24px]">
       <!-- left -->
@@ -62,7 +62,7 @@
 </template>
 <script setup lang="ts">
 import IconGroup from '@/components/IconGroup.vue'
-import { Message } from '@arco-design/web-vue'
+// import { Message } from '@arco-design/web-vue'
 import { reactive } from 'vue';
 import { useRouter } from 'vue-router';
 const route = useRouter()
