@@ -50,6 +50,11 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/view/latestArticle/detail.vue'),
         meta: { title: 'latestArticleDetail' },
       },
+      {
+        path: 'podcast',
+        component: () => import('@/view/podcast/index.vue'),
+        meta: { title: 'podcast' },
+      },
     ],
   },
   {

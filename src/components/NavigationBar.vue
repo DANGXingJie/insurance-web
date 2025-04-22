@@ -112,6 +112,11 @@ const navList = reactive([
     name: 'Contact',
     path: '/layout/contact',
   },
+  {
+    id: 5,
+    name: 'PodCast',
+    path: '/layout/podcast',
+  },
 ])
 const visible = ref(false)
 const handleShowMenu = () => {

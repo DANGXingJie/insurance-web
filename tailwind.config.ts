@@ -30,6 +30,7 @@ export default {
       boxShadow: {
         default: '40px 40px 120px 0px rgba(46, 47, 58, 0.04)',
       },
+      breakInside: ['responsive'],
     },
   },
   plugins: [],
