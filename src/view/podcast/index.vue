@@ -1,15 +1,16 @@
 <template>
   <div class="md:w-full bg-syGreyBg overflow-hidden">
-    <div class="md:w-[1200px] m-auto md:mt-20 h-[1800px]">
+    <div class="md:w-[1200px] m-auto md:mt-20 h-full mt-10 w-[390px]">
       <div class="pt-6 flex w-full items-center">
         <img class="w-6 h-4 mr-2" src="@/assets/images/update-icon.png" alt=" 图标" />
-        <span class="text-xl font-bold">最近更新</span>
+        <span class="md:text-xl text-base font-bold">最近更新</span>
       </div>
-      <div class="mt-4 grid grid-cols-4 grid-rows-2 gap-x-1 gay-y-2 w-full h-[230px]">
-        <div class="w-[280px] h-[90px] flex" v-for="(item, index) in 8" :key="index">
-          <img fit="cover" class="w-9 h-8 mr-2" src="@/assets/images/boke.png" alt=" 图标" />
-          <div class="w-[199px] h-full">
-            <div class="text-lg tracking-widest overflow-hidden line-clamp-2 text-left mb-2">
+      <div
+        class="md:mt-4 mt-6 grid md:grid-cols-4 md:grid-rows-2 gap-x-1 grid-cols-2 grid-rows-4 md:gap-y-2 gap-y-4 w-full h-[230px]">
+        <div class="md:w-[280px] md:h-[90px] w-[181px] h-[46px] flex" v-for="(item, index) in 8" :key="index">
+          <img fit="cover" class="md:w-9 md:h-8 mr-2 h-[22px] w-[22px]" src="@/assets/images/boke.png" alt=" 图标" />
+          <div class="md:w-[199px] w-[138px] h-full">
+            <div class="md:text-lg text-xs tracking-widest overflow-hidden line-clamp-2 text-left md:mb-2">
               【聊科技】机器人跑马拉松，意义何在？
             </div>
             <span class="text-xs text-gray-400">更新/播客</span>
@@ -17,14 +18,15 @@
         </div>
       </div>
       <!-- 瀑布流 -->
-      <div class="columns-4 gap-8 space-y-8 mt-20">
+      <div class="md:columns-4 columns-2 md:gap-8 gap-6 space-y-8 mt-20">
         <template v-for="(item, index) in items" :key="index">
           <!-- 每个项目 -->
           <div class="break-inside-avoid hover:cursor-pointer" :data-key="index">
             <div class="bg-white rounded-l shadow-md">
-              <div class="w-[278px] pt-4 pl-5 pr-4" :style="{ height: `${item.height}px` }">
-                <div class="relative h-[238px]">
-                  <img class="w-[238px] h-[238px] text-center" :src="item.img" alt=" 图标" fit="cover" />
+              <div class="md:w-[278px] w-[186px] pt-4 md:pl-5 pl-2 md:pr-4 pr-2" :style="{ height: `${item.height}px` }">
+                <div class="relative md:h-[238px] h-[141px]">
+                  <img class="md:w-[238px] md:h-[238px] w-[164px] h-[141px] text-center" :src="item.img" alt=" 图标"
+                    fit="cover" />
                   <div class="absolute bottom-0 left-0 right-0 text-white flex">
                     <div v-if="item.type === 2"
                       class="w-[48px] h-[28px] text-xs flex items-center justify-center bg-gray-600 text-white">
@@ -40,7 +42,7 @@
                   </div>
                 </div>
                 <!-- 文字 -->
-                <div class="text-lg mt-4 mb-2">{{ item.title }}</div>
+                <div class="md:text-lg text-xs mt-4 mb-2">{{ item.title }}</div>
                 <div class="text-xs text-gray-400">
                   {{ item.desc }}
                 </div>
@@ -53,7 +55,7 @@
                   </div>
                 </div>
                 <div v-if="item.type === 2"
-                  class="flex justify-center items-center text-sm mt-8 bg-syGreyBg text-gray-400 w-[238px] h-[34px]">
+                  class="flex justify-center items-center md:text-sm text-xs mt-8 bg-syGreyBg text-gray-400 md:w-[238px] md:h-[34px] w-[164px] h-[22px]">
                   {{ item.course }} <icon-right size="16" class="ml-1" />
                 </div>
               </div>
@@ -64,21 +66,21 @@
     </div>
   </div>
   <!-- 音频播放器 -->
-  <div v-if="isShowAudioPlayer" class="fixed bottom-0 left-0 right-0 bg-gray-400 w-full h-[90px]">
-    <div class="w-[1300px] m-auto h-full flex items-center">
+  <div v-if="isShowAudioPlayer" class="fixed bottom-0 left-0 right-0 bg-[#757779] w-full md:h-[90px] h-[49px]">
+    <div class="md:w-[1330px] w-[414px] m-auto h-full flex items-center">
       <!-- left播放控制 -->
-      <div class="w-[160px] h-full flex items-center justify-around">
-        <icon-skip-previous-fill @click="handlePrevSong" style="color: white" size="30" />
-        <icon-pause style="color: white" v-if="isPlaying" @click="handlePlay" size="40" />
-        <icon-play-arrow-fill v-else @click="handlePlay" style="color: white" size="40" />
-        <icon-skip-next-fill @click="handleNextSong" style="color: white" size="30" />
+      <div class="md:w-[170px] w-[100px] h-full flex items-center justify-around">
+        <icon-skip-previous-fill @click="handlePrevSong" style="color: white" :size="isMobile ? 25 : 35" />
+        <icon-pause style="color: white" v-if="isPlaying" @click="handlePlay" :size="isMobile ? 30 : 40" />
+        <icon-play-arrow-fill v-else @click="handlePlay" style="color: white" :size="isMobile ? 30 : 40" />
+        <icon-skip-next-fill @click="handleNextSong" style="color: white" :size="isMobile ? 25 : 35" />
       </div>
       <!-- center播放进度条 -->
-      <div class="flex-1 h-full bg-gray-400 flex items-center">
-        <img class="ml-10 w-[68px] h-[68px]" src="@/assets/images/pubo.png" />
+      <div class="flex-1 h-full bg-[#757779] flex items-center">
+        <img class="md:ml-10 ml-2 md:w-[68px] md:h-[68px] w-8 h-8" src="@/assets/images/pubo.png" />
         <div>
-          <div class="flex justify-between text-white ml-7">
-            <div class="text-xs font-medium mr-1">
+          <div class="flex justify-between text-white md:ml-7 ml-4">
+            <div class="md:text-sm text-xs font-medium mr-1">
               <span v-if="isPlaying">{{ currentSong.title }}</span>
             </div>
             <div>
@@ -87,16 +89,19 @@
               <span class="text-xs font-medium ml-1">{{ formatTime(duration) }}</span>
             </div>
           </div>
-          <a-slider v-model="currentTime" @change="handleSeek" :show-tooltip="false" :max="duration" class="ml-7"
-            :step="0.1" :default-value="currentTime" :style="{ width: '680px' }" />
+          <a-slider v-model="currentTime" @change="handleSeek" :show-tooltip="false" :max="duration" class="md:ml-7 ml-4"
+            :step="0.1" :default-value="currentTime" :style="{ width: isMobile ? '240px' : '700px' }" />
         </div>
       </div>
       <!-- right 功能按钮 -->
-      <div class="w-[250px] h-full relative flex justify-around items-center text-white hover:cursor-pointer">
-        <span @click="handleToPage">文稿</span>
-        <span @click="handlePlayMultiplier">倍速</span>
-        <span @click="handlePlayList">列表</span>
-        <icon-close-circle-fill @click="handleCloseAudioPlayer" style="color: #000" size="35" />
+      <div
+        class="md:w-[250px] w-[120px] md:mr-0 mr-1 text-xs md:text-sm h-full relative flex md:justify-around justify-end items-center text-white hover:cursor-pointer">
+        <div class="md:w-[170px] flex justify-around items-center md:flex hidden">
+          <span @click="handleToPage">文稿</span>
+          <span @click="handlePlayMultiplier">倍速</span>
+          <span @click="handlePlayList">列表</span>
+        </div>
+        <icon-close-circle-fill @click="handleCloseAudioPlayer" style="color: #000" :size="isMobile ? 25 : 35" />
         <!--播放倍数选择-->
         <div v-if="showPlayMultiplier"
           class="absolute -top-[160px] right-[120px] w-[73px] h-[162px] bg-[#222222] flex flex-col justify-around text-syGreyBg">
@@ -118,7 +123,7 @@
               清空
             </button>
           </div>
-          <div class="mt-2">
+          <div class="mt-2 mb-2">
             <div v-for="(item, index) in playlist" :key="index" class="flex justify-between items-center">
               <div :data-key="item" class="truncate w-[300px] mb-2 text-xs">{{ item.title }}</div>
               <div class="hover:cursor-pointer text-grey text-xs mr-2">删除</div>
@@ -271,10 +276,14 @@ const handlePlay = () => {
 // 下一首
 const handleNextSong = () => {
   currentSongIndex.value = (currentSongIndex.value + 1) % playlist.length
+  //切换成功自动播放
+  audioElement.value.play()
 }
 // 上一首
 const handlePrevSong = () => {
   currentSongIndex.value = (currentSongIndex.value - 1 + playlist.length) % playlist.length
+  //切换成功自动播放
+  audioElement.value.play()
 }
 
 //用户拖动进度条结束时的处理
@@ -326,6 +335,8 @@ onMounted(() => {
   })
   //播放结束监听
   audioElement.value.addEventListener('ended', handleNextSong)
+  //初始化瀑布流高度
+  //initHeight()
 })
 
 //组件卸载时移除事件监听
@@ -417,12 +428,12 @@ const handlePlayAudio = async (item: any) => {
   if (audioElement.value) {
     isShowAudioPlayer.value = true
     try {
-      await audioElement.value.play();
+      await audioElement.value.play()
       //播放状态设置为true
-      isPlaying.value = true;
-      console.log('音频开始自动播放');
+      isPlaying.value = true
+      console.log('音频开始自动播放')
     } catch (error) {
-      console.error('自动播放被阻止:', error);
+      console.error('自动播放被阻止:', error)
     }
   }
 }
@@ -434,6 +445,27 @@ const handleCloseAudioPlayer = () => {
     isPlaying.value = false
   }
 }
+
+const isMobile = ref(false)
+//初始化瀑布流高度
+const initHeight = () => {
+  //判断是否是移动端
+  isMobile.value = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+  if (isMobile.value) {
+    //如果是切换到了移动端，则修改items 数组每一项的高度
+
+    console.log('%c [ 移动端 ]-449', 'font-size:13px; background:pink; color:#bf2c9f;')
+    items.value.forEach((item) => {
+      //如果item.type 为 1，则修改高度为 50px,否则为 100px
+      if (item.type === 1) {
+        item.height = 300
+      } else {
+        item.height = 388
+      }
+    })
+  }
+}
+initHeight()
 </script>
 <style scoped>
 /* 滚动条 样式 */
