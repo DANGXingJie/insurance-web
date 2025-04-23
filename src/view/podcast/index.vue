@@ -1,6 +1,6 @@
 <template>
   <div class="md:w-full bg-syGreyBg overflow-hidden">
-    <div class="md:w-[1200px] m-auto md:mt-20 h-full mt-10 w-[390px]">
+    <div class="md:w-[1200px] w-[350px] m-auto md:mt-20 h-full mt-10">
       <div class="pt-6 flex w-full items-center">
         <img class="w-6 h-4 mr-2" src="@/assets/images/update-icon.png" alt=" 图标" />
         <span class="md:text-xl text-base font-bold">最近更新</span>
@@ -18,12 +18,12 @@
         </div>
       </div>
       <!-- 瀑布流 -->
-      <div class="md:columns-4 columns-2 md:gap-8 gap-6 space-y-8 mt-20">
+      <div class="md:columns-4 columns-2 md:gap-8 gap-4 space-y-8 mt-20">
         <template v-for="(item, index) in items" :key="index">
           <!-- 每个项目 -->
           <div class="break-inside-avoid hover:cursor-pointer" :data-key="index">
             <div class="bg-white rounded-l shadow-md">
-              <div class="md:w-[278px] w-[186px] pt-4 md:pl-5 pl-2 md:pr-4 pr-2" :style="{ height: `${item.height}px` }">
+              <div class="md:w-[278px] w-[166px] pt-4 md:pl-5 pl-2 md:pr-4 pr-2" :style="{ height: `${item.height}px` }">
                 <div class="relative md:h-[238px] h-[141px]">
                   <img class="md:w-[238px] md:h-[238px] w-[164px] h-[141px] text-center" :src="item.img" alt=" 图标"
                     fit="cover" />
@@ -55,7 +55,7 @@
                   </div>
                 </div>
                 <div v-if="item.type === 2"
-                  class="flex justify-center items-center md:text-sm text-xs mt-8 bg-syGreyBg text-gray-400 md:w-[238px] md:h-[34px] w-[164px] h-[22px]">
+                  class="flex justify-center items-center md:text-sm text-xs mt-8 bg-syGreyBg text-gray-400 md:w-[238px] md:h-[34px] w-[150px] h-[22px]">
                   {{ item.course }} <icon-right size="16" class="ml-1" />
                 </div>
               </div>
@@ -66,7 +66,8 @@
     </div>
   </div>
   <!-- 音频播放器 -->
-  <div v-if="isShowAudioPlayer" class="fixed bottom-0 left-0 right-0 bg-[#757779] w-full md:h-[90px] h-[49px]">
+  <div v-if="isShowAudioPlayer"
+    class="fixed md:bottom-0 bottom-6 left-0 right-0 bg-[#757779] w-full md:h-[90px] h-[49px]">
     <div class="md:w-[1330px] w-[414px] m-auto h-full flex items-center">
       <!-- left播放控制 -->
       <div class="md:w-[170px] w-[100px] h-full flex items-center justify-around">
@@ -453,7 +454,6 @@ const initHeight = () => {
   isMobile.value = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
   if (isMobile.value) {
     //如果是切换到了移动端，则修改items 数组每一项的高度
-
     console.log('%c [ 移动端 ]-449', 'font-size:13px; background:pink; color:#bf2c9f;')
     items.value.forEach((item) => {
       //如果item.type 为 1，则修改高度为 50px,否则为 100px
