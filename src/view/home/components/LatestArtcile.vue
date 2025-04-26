@@ -1,7 +1,7 @@
 <template>
   <div class="mt-10 md:mt-20 w-full min-h-[729px]">
     <div class="text-[24px] md:text-[48px] font-medium text-dark">Latest artcile</div>
-    <button
+    <button @click="handlArtcile"
       class="mt-8 w-[158px] h-[46px] md:mt-5 md:w-[154px] md:h-[46px] rounded-[20px] border border-primary text-[14px] text-primary">
       Latest artcile
     </button>
@@ -27,6 +27,8 @@
 import list1 from '@/assets/images/list-1.png'
 import list2 from '@/assets/images/list-2.png'
 import list3 from '@/assets/images/list-3.png'
+import { useRouter } from "vue-router"
+const router = useRouter()
 const sessionList = [
   {
     icon: list1,
@@ -47,6 +49,13 @@ const sessionList = [
     author: 'Tiana Westervelt',
   },
 ]
+
+const handlArtcile = () => {
+  router.push({
+    path: '/layout/latestArticle',
+
+  })
+}
 </script>
 
 <style scoped></style>

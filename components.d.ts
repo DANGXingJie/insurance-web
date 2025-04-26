@@ -12,6 +12,7 @@ declare module 'vue' {
     FooterBg: typeof import('./src/components/FooterBg.vue')['default']
     IconGroup: typeof import('./src/components/IconGroup.vue')['default']
     IconList: typeof import('./src/components/IconList.vue')['default']
+    MusicPlayer: typeof import('./src/components/MusicPlayer.vue')['default']
     NavigationBar: typeof import('./src/components/NavigationBar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
