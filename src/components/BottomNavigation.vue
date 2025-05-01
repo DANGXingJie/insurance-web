@@ -20,7 +20,7 @@
             <ul class="text-grey text-[14px] md:text-[16px] font-medium">
               <template v-for="(item, index) in navList" :key="index">
                 <li :data="index" :class="index != 0 ? 'text-dark cursor-pointer text-[16px]' : ''" class="mb-6">
-                  {{ item.title }}
+                  {{ $t(`base.footerNavList.${item.title}`) }}
                 </li>
               </template>
             </ul>
@@ -29,7 +29,7 @@
             <ul class="text-grey text-[14px] md:text-[16px] font-medium">
               <template v-for="(item, index) in linkList" :key="index">
                 <li :data="index" :class="index != 0 ? 'text-dark cursor-pointer text-[16px]' : ''" class="mb-6">
-                  {{ item.title }}
+                  {{ $t(`base.footerLinkList.${item.title}`) }}
                 </li>
               </template>
             </ul>
@@ -53,7 +53,7 @@
       class="flex flex-col items-center justify-center md:w-[1200px] md:h-[72px] md:m-auto md:mt-[48px] md:bg-bgColorGrey md:rounded-[48px] md:flex md:items-center md:justify-between md:flex-row">
       <div class="text-[12px] ml-5 md:text-[16px] font-normal text-grey">© 2022 Company Name® Global Inc.</div>
       <IconGroup />
-      <div class="mt-6 md:mt-0 h-[24px] flex mr-[22px] ">
+      <div class="mt-6 md:mt-0 h-[24px] flex mr-[22px]">
         <span class="text-secondaryDark text-[16px] font-medium mr-11">Terms of Service</span>
         <span class="text-secondaryDark text-[16px] font-medium">Privacy Policy</span>
       </div>
@@ -74,11 +74,11 @@ const navList = [
     path: '/',
   },
   {
-    title: 'About  Us',
+    title: 'AboutUs',
     icon: 'el-icon-menu',
   },
   {
-    title: 'Contact Us',
+    title: 'ContactUs',
     icon: 'el-icon-menu',
   },
   {
@@ -93,12 +93,12 @@ const linkList = [
     path: '/',
   },
   {
-    title: 'Privacy Policy',
+    title: 'PrivacyPolicy',
     icon: 'el-icon-menu',
     path: '/',
   },
   {
-    title: 'Term & Conditioner',
+    title: 'TermConditioner',
     icon: 'el-icon-menu',
   },
   {

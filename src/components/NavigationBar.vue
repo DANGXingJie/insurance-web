@@ -11,7 +11,7 @@
           <template v-for="(item, index) in navList" :key="index">
             <li class="mr-[48px] nav-item" :data="index" @click="handleMenuClick(item, 1)"
               :class="currentKey === index ? 'nav-item-active nav-item-active-text ' : ''">
-              {{ item.name }}
+              {{ $t(`base.nav.${item.name}`) }}
             </li>
           </template>
         </ul>
@@ -22,6 +22,17 @@
             class="w-[103px] h-[46px] rounded-[20px] border border-primary text-sm text-primary font-medium hidden md:block">
             Login
           </button>
+
+          <!-- 国际化 -->
+          <div class="md:ml-4 hidden md:block">
+            <a-dropdown trigger="hover" @select="handleDropdown">
+              <a-button size="small">{{ currentLanguage }} <icon-caret-down class="ml-1" /></a-button>
+              <template #content>
+                <a-doption v-for="(item, index) in supportedLocales" :key="index">{{ item.label }}</a-doption>
+              </template>
+            </a-dropdown>
+          </div>
+
           <div v-if="false" class="absolute top-10 right-2 md:top-0 md:right-0 md:ml-4 md:relative">
             <a-switch size="large" :default-checked="false" :model-value="switchTheme" @change="handleSwitchTheme"
               :checked-value="true" :unchecked-value="false" checked-color="#000033">
@@ -54,7 +65,7 @@
         <template v-for="(item, index) in navList" :key="index">
           <li class="mt-[48px] nav-item ml-1 h-[24px] leading-[24px]" :data="index" @click="handleMenuClick(item, 2)"
             :class="currentKey === index ? 'nav-item-active-h5 nav-item-active-text ' : ''">
-            {{ item.name }}
+            {{ $t(`base.nav.${item.name}`) }}
           </li>
         </template>
       </ul>
@@ -65,12 +76,22 @@
         Login
       </button>
     </div>
+    <div class="absolute right-4 bottom-6">
+      <a-dropdown trigger="hover" @select="handleDropdown">
+        <a-button size="small">{{ currentLanguage }} <icon-caret-down class="ml-1" /></a-button>
+        <template #content>
+          <a-doption v-for="(item, index) in supportedLocales" :key="index">{{ item.label }}</a-doption>
+        </template>
+      </a-dropdown>
+    </div>
   </a-drawer>
 </template>
 <script setup lang="ts">
 import { IconMenu } from '@arco-design/web-vue/es/icon'
-import { computed, reactive, ref } from 'vue'
+import { computed, reactive, ref, watchEffect } from 'vue'
 import { useRouter } from 'vue-router'
+import { useI18n } from 'vue-i18n'
+import type { Locale } from 'vue-i18n'
 const route = useRouter()
 const currentKey = ref(0)
 const switchTheme = ref(false)
@@ -157,6 +178,43 @@ const navBgColor = computed(() => {
       return 'text-dark bg-bgColorGrey'
   }
 })
+
+// 获取i18n实例
+const { locale } = useI18n()
+// 支持的语言列表（带类型校验）
+type SupportedLocale = {
+  value: Locale
+  label: string
+}
+const supportedLocales = ref<SupportedLocale[]>([
+  { value: 'zh-cn', label: '简体中文' },
+  { value: 'en', label: 'English' },
+])
+// 当前语言状态（带本地存储持久化）
+const currentLocale = ref<Locale>(
+  (() => {
+    // 从本地存储读取或回退默认
+    const savedLang = localStorage.getItem('user_lang') as Locale | null
+    return savedLang || 'zh-cn'
+  })()
+)
+//初始化同步
+watchEffect(() => {
+  locale.value = currentLocale.value
+})
+
+const currentLanguage = ref(currentLocale.value === 'zh-cn' ? '简体中文' : 'English')
+//切换语言
+const handleDropdown = async (e: any) => {
+  currentLanguage.value = e
+  if (e === '简体中文') {
+    currentLocale.value = 'zh-cn'
+    localStorage.setItem('user_lang', 'zh-cn')
+  } else {
+    currentLocale.value = 'en'
+    localStorage.setItem('user_lang', 'en')
+  }
+}
 </script>
 
 <style scoped>
