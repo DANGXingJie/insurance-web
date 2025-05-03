@@ -19,10 +19,9 @@
       <div>
         <div class="flex flex-col items-center md:items-center md:flex-row">
           <button @click="handleLogin" :class="currentKey == 0 ? 'bg-bgColorDark' : 'bg-white'"
-            class="w-[103px] h-[46px] rounded-[20px] border border-primary text-sm text-primary font-medium hidden md:block">
-            Login
+            class="w-[90px] h-[30px] rounded-[15px] border border-primary text-sm text-primary font-medium hidden md:block">
+            {{ $t('base.login.text') }}
           </button>
-
           <!-- 国际化 -->
           <div class="md:ml-4 hidden md:block">
             <a-dropdown trigger="hover" @select="handleDropdown">
@@ -32,8 +31,8 @@
               </template>
             </a-dropdown>
           </div>
-
-          <div v-if="false" class="absolute top-10 right-2 md:top-0 md:right-0 md:ml-4 md:relative">
+          <!-- 深色模式/日间模式 -->
+          <div class="absolute top-10 right-2 md:top-0 md:right-0 md:ml-4 md:relative">
             <a-switch size="large" :default-checked="false" :model-value="switchTheme" @change="handleSwitchTheme"
               :checked-value="true" :unchecked-value="false" checked-color="#000033">
               <template #checked-icon>
@@ -73,7 +72,7 @@
     <div class="absolute left-4 bottom-6">
       <button @click="handleLogin"
         class="w-[82px] h-[36px] rounded-[15px] border border-primary text-sm text-primary font-medium">
-        Login
+        {{ $t('base.login.text') }}
       </button>
     </div>
     <div class="absolute right-4 bottom-6">

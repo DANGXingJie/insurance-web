@@ -25,4 +25,11 @@ export default {
     TermConditioner: '团队',
     FAQs: '问答',
   },
+  footerTitle: {
+    title: '我们与您合作，根据您的预算和需求定制政策。',
+    submit: '提交',
+  },
+  login: {
+    text: '登录',
+  },
 }

@@ -25,14 +25,7 @@
   background-color: var(--color-bg-1);
 }
 
-/* 页面版心 */
-/* .sys-layout {
-  width: 1200px;
-  margin: 0 auto;
-} */
-
-/* 页面版心 */
-/* .sys-layout-h5 {
-  width: 350px;
-  margin: 0 auto;
-} */
+/* 主题切换一级级容器背景 */
+.arco-theme-color-text-1 {
+  color: var(--color-text-1);
+}

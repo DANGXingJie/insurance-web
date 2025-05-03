@@ -26,4 +26,11 @@ export default {
     TermConditioner: 'Term Conditioner',
     FAQs: 'FAQs',
   },
+  footerTitle: {
+    title: 'We work with you to customize a policy that fits your budget and your needs.',
+    submit: 'Submit',
+  },
+  login: {
+    text: 'login',
+  },
 }

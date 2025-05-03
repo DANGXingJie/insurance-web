@@ -7,7 +7,8 @@
         class="text-[32px] leading-[40px] md:text-[63px] font-medium whitespace-normal break-words md:leading-[70px]">
         {{ props.title }}
       </span>
-      <div :class="props.type === 1 && props.title === 'Let us help you protect your assets' ? 'text-white' : 'text-dark'"
+      <div
+        :class="props.type === 1 && props.title === 'Let us help you protect your assets' ? 'text-white' : 'text-dark'"
         class="text-[16px] w-[350px] mt-2 md:mt-6 md:text-[18px] font-normal  md:w-[480px] text-left">
         {{ props.desc }}
       </div>
@@ -17,9 +18,9 @@
       </button>
     </div>
     <div :class="props.type === 1 ? 'order-1' : 'md:order-1 order-1 md:top-0 mt-8'"
-      class="w-[331px] w-[302px] mt-[56px] md:mt-0  md:w-[636px] md:h-full flex items-center justify-center">
-      <img v-if="props.type == 1" class="w-[331px] w-[302px] md:w-[636px] md:h-full" fit="cover" :src="props.bgImg" />
-      <img v-else class="w-[331px] w-[302px] md:w-[550px] md:h-[500px]" fit="cover" :src="props.bgImg" />
+      class="w-[331px] mt-[56px] md:mt-0  md:w-[636px] md:h-full flex items-center justify-center">
+      <img v-if="props.type == 1" class="w-[331px]  md:w-[636px] md:h-full" fit="cover" :src="props.bgImg" />
+      <img v-else class="w-[331px]  md:w-[550px] md:h-[500px]" fit="cover" :src="props.bgImg" />
     </div>
   </div>
 </template>

@@ -9,7 +9,7 @@
           <span class="text-[16px] ml-[6px] md:ml-2 md:text-xl font-medium text-primary">Insurance</span>
         </div>
         <div class="mt-4 text-[16px] md:text-[18px] font-normal text-secondaryDark text-left">
-          We work with you to customize a policy that fits your budget and your needs.
+          {{ $t('base.footerTitle.title') }}
         </div>
       </div>
       <!-- 右边 -->
@@ -42,7 +42,7 @@
             <input class="w-[254px] h-[46px] md:w-[326px] md:h-[46px]" type="text"
               placeholder="Enter your email address" />
             <button class="w-[80px] ml-4 h-[46px] bg-primary rounded-[20px] text-dark text-[14px] font-medium">
-              Submit
+              {{ $t('base.footerTitle.submit') }}
             </button>
           </div>
         </div>
